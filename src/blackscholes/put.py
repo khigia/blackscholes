@@ -54,7 +54,7 @@ class BlackScholesPut(BlackScholesBase):
         with respect to time (i.e. time decay).
         """
         return (
-            (-exp(self.q * self.T) * self.S * self._pdf(self._d1) * self.sigma)
+            (-exp(-self.q * self.T) * self.S * self._pdf(self._d1) * self.sigma)
             / (2.0 * sqrt(self.T))
         ) + (
             self.r * self.K * exp(-self.r * self.T) * self._cdf(-self._d2)
